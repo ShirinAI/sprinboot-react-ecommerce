@@ -1,5 +1,6 @@
 package com.example.ecommercestore.controller;
 
+import com.example.ecommercestore.dto.JwtAuthResponse;
 import com.example.ecommercestore.dto.LoginDto;
 import com.example.ecommercestore.dto.RegisterDto;
 import com.example.ecommercestore.service.AuthService;
@@ -25,9 +26,9 @@ public class AuthController {
 
     // Build Login REST API
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody LoginDto loginDto){
-        String response = authService.login(loginDto);
-        return new ResponseEntity<>(response, HttpStatus.OK);
+    public ResponseEntity<JwtAuthResponse> login(@RequestBody LoginDto loginDto){
+        JwtAuthResponse jwtAuthResponse = authService.login(loginDto);
+        return new ResponseEntity<>(jwtAuthResponse, HttpStatus.OK);
     }
 
 }

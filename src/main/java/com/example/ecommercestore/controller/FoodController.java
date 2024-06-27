@@ -45,5 +45,5 @@ public class FoodController {
         foodService.deleteFood(FoodId);
         return ResponseEntity.ok("Food was deleted successfully.");
     }
-    
+
 }
